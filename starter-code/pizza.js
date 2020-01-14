@@ -44,6 +44,17 @@ function renderPepperonni() {
 }
 
 function renderMushrooms() {
+
+
+
+  document.querySelectorAll('.mushroom').forEach(function($mushrooms){
+    if (state.mushrooms) {
+      $mushrooms.style.visibility = "visible";
+    }
+    else {
+      $mushrooms.style.visibility = "hidden";
+    }
+  })
   // Iteration 1: set the visibility of `<section class="mushroom">`
 }
 
@@ -77,6 +88,13 @@ document.querySelector('.btn.btn-pepperonni').onclick = function() {
 }
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
+
+document.querySelector('.btn.btn-mushrooms').onclick = function() {
+  state.mushrooms = !state.mushrooms
+  renderEverything()
+}
+
+
 
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
 
