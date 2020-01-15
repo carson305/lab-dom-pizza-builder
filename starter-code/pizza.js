@@ -55,18 +55,49 @@ function renderMushrooms() {
       $mushrooms.style.visibility = "hidden";
     }
   })
+
+ 
+  
   // Iteration 1: set the visibility of `<section class="mushroom">`
 }
 
 function renderGreenPeppers() {
-  // Iteration 1: set the visibility of `<section class="green-pepper">`
+
+  document.querySelectorAll('.green-pepper').forEach(function($greenpepper){
+    if (state.greenPeppers) {
+      $greenpepper.style.visibility = "visible";
+    }
+    else {
+      $greenpepper.style.visibility = "hidden";
+    }
+  })
 }
+  // Iteration 1: set the visibility of `<section class="green-pepper">`
+
 
 function renderWhiteSauce() {
+
+  document.querySelectorAll('.sauce-white').forEach(function($sauce){
+    if (state.whiteSauce) {
+      $sauce.style.visibility = "visible";
+    }
+    else {
+      $sauce.style.visibility = "hidden";
+    }
+  })
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
 }
 
 function renderGlutenFreeCrust() {
+
+  document.querySelectorAll('.crust-gluten-free').forEach(function($crust){
+    if (state.glutenFreeCrust) {
+      $crust.style.visibility = "visible";
+    }
+    else {
+      $crust.style.visibility = "hidden";
+    }
+  })
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
 }
 
@@ -98,6 +129,21 @@ document.querySelector('.btn.btn-mushrooms').onclick = function() {
 
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
 
+document.querySelector('.btn.btn-green-peppers').onclick = function() {
+  state.greenPeppers = !state.greenPeppers
+  renderEverything()
+}
+
+
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
+document.querySelector('.btn.btn-sauce').onclick = function() {
+  state.whiteSauce = !state.whiteSauce
+  renderEverything()
+}
+
 
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
+document.querySelector('.btn.btn-crust').onclick = function() {
+  state.glutenFreeCrust = !state.glutenFreeCrust
+  renderEverything()
+}
